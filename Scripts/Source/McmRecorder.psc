@@ -40,6 +40,8 @@ endFunction
 event OnInit()
     CurrentlyInstalledVersion = GetVersion()
     skiConfigManager = Quest.GetQuest("SKI_ConfigManagerInstance") as SKI_ConfigManager
+    int mcmRecorderData = JValue.readFromFile("Data/mcmRecorder.json")
+    JDB.setObj("mcmRecorder", mcmRecorderData)
     StartListenForKeyboardShortcuts()
     ListenForRaceMenuClose()
     McmRecorder_VRIK.RegisterVrikGesturesForRecordings()
